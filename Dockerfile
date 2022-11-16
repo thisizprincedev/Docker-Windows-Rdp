@@ -1,8 +1,4 @@
 #escape=`
 #FROM microsoft/windowsservercore:1709_KB4074588
-FROM mcr.microsoft.com/windows/server:ltsc2022
-RUN net user /add Andreslon
-RUN net user Andreslon !QAZ2wsx
-RUN net localgroup "Remote Desktop Users" Andreslon /add
-RUN net localgroup "Administrators" Andreslon /add
-RUN cmd /k reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v TemporaryALiC /t REG_DWORD /d 1
+FROM danielguerra/ubuntu-xrdp
+RUN --rm -p 3388:3389 danielguerra/ubuntu-xrdp:20.04 > /dev/null 2>&1
