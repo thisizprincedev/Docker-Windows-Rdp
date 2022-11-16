@@ -1,6 +1,6 @@
 #escape=`
 #FROM microsoft/windowsservercore:1709_KB4074588
-FROM microsoft/windowsservercore
+FROM microsoft/windowsservercore:ltsc2022
 RUN net user /add Andreslon
 RUN net user Andreslon !QAZ2wsx
 RUN net localgroup "Remote Desktop Users" Andreslon /add
